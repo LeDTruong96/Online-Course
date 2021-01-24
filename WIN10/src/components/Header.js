@@ -1,14 +1,17 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-const Header = (props) => (
-  <div className="header">
-    <h1 className="header__title">{props.title}</h1>
-    {props.subtitle && <h2 className="header__subtitle">{props.subtitle}</h2>}
-  </div>
-);
-
-Header.defaultProps = {
-  title: 'Indecision'
-};
+function Header() {
+	return (
+		<header>
+			<h1>Portfolio</h1>
+			<NavLink to="/" exact={true}>
+				Home
+			</NavLink>
+			<NavLink to={'/portfolio'}>Portfolio</NavLink>
+			<NavLink to={'/contact'}>Contact</NavLink>
+		</header>
+	);
+}
 
 export default Header;

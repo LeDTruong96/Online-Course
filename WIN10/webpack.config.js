@@ -1,4 +1,22 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const postcssLoader = {
+	loader: 'postcss-loader',
+	options: {
+		postcssOptions: {
+			plugins: [ require('autoprefixer') ]
+		}
+	}
+};
+
+const babelLoader = {
+	loader: 'babel-loader',
+	options: {
+		presets: [ '@babel/preset-env', '@babel/preset-react' ],
+		plugins: [ 'transform-class-properties' ]
+	}
+};
 
 module.exports = {
 	entry: './src/app.js',
@@ -9,13 +27,19 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				loader: 'babel-loader',
+				use: [ babelLoader ],
 				test: /\.js$/,
 				exclude: /node_modules/
 			},
 			{
-				test: /\.scss$/,
-				use: [ 'style-loader', 'css-loader?url=false', 'sass-loader' ]
+				test: /\.s?css$/,
+				use: [
+					'style-loader',
+					//MiniCssExtractPlugin.loader,
+					'css-loader',
+					postcssLoader,
+					'sass-loader'
+				]
 			}
 		]
 	},
@@ -23,7 +47,8 @@ module.exports = {
 	mode: 'development',
 	devServer: {
 		contentBase: path.join(__dirname, 'public'),
-		hot: true,
-		port: 3000
-	}
+		port: 5050,
+		historyApiFallback: true
+	},
+	plugins: [ new MiniCssExtractPlugin({ filename: 'styles.css' }) ]
 };
