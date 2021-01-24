@@ -47,7 +47,7 @@ module.exports = {
 	mode: 'development',
 	devServer: {
 		contentBase: path.join(__dirname, 'public'),
-		port: 9000
+		port: 5050
 	},
 	plugins: [ new MiniCssExtractPlugin({ filename: 'styles.css' }) ]
 };
