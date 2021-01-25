@@ -14,7 +14,7 @@ const babelLoader = {
 	loader: 'babel-loader',
 	options: {
 		presets: [ '@babel/preset-env', '@babel/preset-react' ],
-		plugins: [ 'transform-class-properties' ]
+		plugins: [ 'transform-class-properties', '@babel/plugin-proposal-object-rest-spread' ]
 	}
 };
 

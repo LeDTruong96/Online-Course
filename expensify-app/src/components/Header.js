@@ -4,14 +4,15 @@ import { NavLink } from 'react-router-dom';
 function Header() {
 	return (
 		<header>
+			<h1>Expensify</h1>
 			<NavLink to={'/'} activeClassName="is-active" exact={true}>
-				Go Home page
+				Dashboard
 			</NavLink>
 			<NavLink to={'/create'} activeClassName="is-active" exact={true}>
-				Go Add page
+				Create Expense
 			</NavLink>
 			<NavLink to={'/help'} activeClassName="is-active" exact={true}>
-				Go help page
+				Help
 			</NavLink>
 		</header>
 	);
