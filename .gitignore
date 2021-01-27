@@ -9,7 +9,7 @@
 *.vi
 *~
 *.sass-cache
-*/node_modules/
+*/expensify-app/node_modules/
 .tmp/
 
 # OS or Editor folders
