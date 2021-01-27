@@ -1,5 +1,5 @@
 // Get visible expenses
-export default (expenses, filters) => {
+export default ({ expenses, filters }) => {
 	return expenses
 		.filter((expense) => {
 			const matchStartDate =

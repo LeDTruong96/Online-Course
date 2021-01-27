@@ -1,11 +1,15 @@
 import React from 'react';
+import ExpensesList from './ExpensesList';
+import ExpensesListFilters from './ExpensesListFilters';
 
-function DashboardPage() {
+const DashboardPage = (props) => {
 	return (
 		<div>
-			<p>This is my home page</p>
+			<p>This is Dash board</p>
+			<ExpensesListFilters />
+			<ExpensesList />
 		</div>
 	);
-}
+};
 
 export default DashboardPage;

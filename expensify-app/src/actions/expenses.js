@@ -15,7 +15,7 @@ export const addExpenses = ({ description = '', note = '', amount = 0, createAt 
 };
 
 // REMOVE_EXPENSE
-export const removeExpenses = ({ id } = {}) => {
+export const removeExpenses = (id) => {
 	return {
 		type: 'REMOVE_EXPENSE',
 		id
