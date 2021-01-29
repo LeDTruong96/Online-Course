@@ -10,7 +10,6 @@ import {
 } from '../actions/filters';
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
-import moment from 'moment';
 
 class ExpenseListFilters extends React.Component {
 	state = {
@@ -18,10 +17,8 @@ class ExpenseListFilters extends React.Component {
 	};
 
 	onDatesChange = ({ startDate, endDate }) => {
-		console.log(moment(null));
-		console.log(endDate);
-		// this.props.dispatch(setStartDate(startDate.valueOf()));
-		// this.props.dispatch(setEndDate(endDate.valueOf()));
+		this.props.dispatch(setStartDate(startDate));
+		this.props.dispatch(setEndDate(endDate));
 	};
 
 	onFocusChange = (calendarFocused) => {
@@ -54,9 +51,9 @@ class ExpenseListFilters extends React.Component {
 					<option value="amount">Amount</option>
 				</select>
 				<DateRangePicker
-					startDate={moment(this.props.filters.startDate)}
+					startDate={this.props.filters.startDate}
 					startDateId="your_unique_start_date_id"
-					endDate={moment(this.props.filters.endDate)}
+					endDate={this.props.filters.endDate}
 					endDateId="your_unique_end_date_id"
 					onDatesChange={this.onDatesChange}
 					focusedInput={this.state.calendarFocused}

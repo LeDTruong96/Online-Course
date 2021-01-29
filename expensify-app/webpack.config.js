@@ -10,13 +10,16 @@ const postcssLoader = {
 	}
 };
 
-const babelLoader = {
-	loader: 'babel-loader',
-	options: {
-		presets: [ '@babel/preset-env', '@babel/preset-react' ],
-		plugins: [ 'transform-class-properties' ]
-	}
-};
+// const babelLoader = {
+// 	loader: 'babel-loader',
+// 	options: {
+// 		presets: [ '@babel/env', '@babel/react' ],
+// 		plugins: [
+// 			'@babel/plugin-proposal-class-properties',
+// 			'@babel/plugin-proposal-object-rest-spread'
+// 		]
+// 	}
+// };
 
 module.exports = {
 	entry: './src/app.js',
@@ -27,7 +30,8 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				use: [ babelLoader ],
+				// use: [ babelLoader ],
+				loader: 'babel-loader',
 				test: /\.js$/,
 				exclude: /node_modules/
 			},
