@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditExpensePage match the snapshot 1`] = `
+<div>
+  <ExpenseForm
+    Expense={
+      Object {
+        "amount": 195,
+        "createdAt": 0,
+        "description": "Gum",
+        "id": "1",
+        "note": "",
+      }
+    }
+    onSubmit={[Function]}
+    type="Save Expense"
+  />
+  <button
+    onClick={[Function]}
+  >
+    Remove Expense 
+  </button>
+</div>
+`;

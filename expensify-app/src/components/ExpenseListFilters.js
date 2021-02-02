@@ -9,44 +9,41 @@ import {
 	setEndDate
 } from '../actions/filters';
 import 'react-dates/initialize';
-import 'react-dates/lib/css/_datepicker.css';
 
-class ExpenseListFilters extends React.Component {
+export class ExpenseListFilters extends React.Component {
 	state = {
 		calendarFocused: null
 	};
 
 	onDatesChange = ({ startDate, endDate }) => {
-		this.props.dispatch(setStartDate(startDate));
-		this.props.dispatch(setEndDate(endDate));
+		this.props.setStartDate(startDate);
+		this.props.setEndDate(endDate);
 	};
 
 	onFocusChange = (calendarFocused) => {
+		console.log(calendarFocused);
 		this.setState(() => {
 			return { calendarFocused };
 		});
 	};
 
+	onTextChange = (e) => {
+		this.props.setTextFilter(e.target.value);
+	};
+
+	onSelectSortBy = (e) => {
+		if (e.target.value === 'date') {
+			this.props.sortByDate();
+		} else if (e.target.value === 'amount') {
+			this.props.sortByAmount();
+		}
+	};
+
 	render() {
 		return (
 			<div>
-				<input
-					type="text"
-					value={this.props.filters.text}
-					onChange={(e) => {
-						this.props.dispatch(setTextFilter(e.target.value));
-					}}
-				/>
-				<select
-					value={this.props.filters.sortBy}
-					onChange={(e) => {
-						if (e.target.value === 'date') {
-							this.props.dispatch(sortByDate());
-						} else if (e.target.value === 'amount') {
-							this.props.dispatch(sortByAmount());
-						}
-					}}
-				>
+				<input type="text" value={this.props.filters.text} onChange={this.onTextChange} />
+				<select value={this.props.filters.sortBy} onChange={this.onSelectSortBy}>
 					<option value="date">Date</option>
 					<option value="amount">Amount</option>
 				</select>
@@ -73,4 +70,14 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps)(ExpenseListFilters);
+const mapDispatchToProps = (dispatch) => {
+	return {
+		setEndDate: (endDate) => dispatch(setEndDate(endDate)),
+		setStartDate: (startDate) => dispatch(setStartDate(startDate)),
+		setTextFilter: (e) => dispatch(setTextFilter(e.target.value)),
+		sortByDate: () => dispatch(sortByDate()),
+		sortByAmount: () => dispatch(sortByAmount())
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ExpenseListFilters);

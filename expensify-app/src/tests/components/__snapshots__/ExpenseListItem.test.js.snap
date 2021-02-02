@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExpenseList 1`] = `
+<div>
+  <Link
+    to="/edit/id_element_of_expenses"
+  >
+    <h3>
+      Rent
+    </h3>
+  </Link>
+  <p>
+    109500
+     - 
+    Dec 28th, 1969
+  </p>
+</div>
+`;
