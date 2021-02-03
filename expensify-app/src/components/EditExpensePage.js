@@ -8,17 +8,20 @@ export class EditExpensePage extends Component {
 		this.props.editExpense(id, expense);
 		this.props.history.push('/');
 	};
+
 	onClick = () => {
+		// console.log(this.props.expense.id);
 		this.props.removeExpense(this.props.expense.id);
 		this.props.history.push('/');
 	};
 
 	render() {
+		console.log(this.props);
 		return (
 			<div>
 				<ExpenseForm
 					type={'Save Expense'}
-					Expense={this.props.expense}
+					editExpense={this.props.expense}
 					onSubmit={this.onSubmit}
 				/>
 				<button onClick={this.onClick}>Remove Expense </button>
@@ -37,11 +40,11 @@ const getExpenseFromStore = (states, props) => {
 
 const mapDispatchToProps = (dispatch, props) => {
 	return {
-		editExpense: () => {
-			dispatch(editExpense(props.expense.id, expense));
+		editExpense: (id, expense) => {
+			dispatch(editExpense(id, expense));
 		},
-		removeExpense: () => {
-			dispatch(removeExpense(props.expense.id));
+		removeExpense: (id) => {
+			dispatch(removeExpense(id));
 		}
 	};
 };
