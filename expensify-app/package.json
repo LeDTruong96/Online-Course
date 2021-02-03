@@ -8,7 +8,9 @@
     "live-server": "live-server public/",
     "build": "webpack",
     "dev": "webpack serve",
-    "test": "jest --config=jest.config.json"
+    "test": "jest --config=jest.config.json",
+    "start": "node server/server.js",
+    "heroku-postbuild": "npm run build"
   },
   "jest": {
     "transform": {
