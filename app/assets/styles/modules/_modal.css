@@ -1,0 +1,46 @@
+.modal {
+	position: fixed;
+	display: flex;
+	visibility: hidden;
+	opacity: 0;
+	bottom: 0;
+	top: 0;
+	right: 0;
+	left: 0;
+	background-color: rgba(#fff, 0.9);
+	transform: scale(1.2);
+	transition: all 0.3s ease-out;
+
+	&__inner {
+		flex: 1;
+		margin: auto;
+	}
+
+	&__description {
+		font-size: 1.4em;
+		font-weight: 300;
+		text-align: center;
+	}
+
+	&--show {
+		visibility: visible;
+		z-index: 2;
+		transform: scale(1);
+		opacity: 1;
+	}
+
+	&__close {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		font-size: 2rem;
+		color: $mainBlue;
+		transform: scaleX(1.2);
+		cursor: pointer;
+		transition: transform 0.3s ease-out;
+
+		&:hover {
+			transform: scale(1.3);
+		}
+	}
+}
