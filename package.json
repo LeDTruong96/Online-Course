@@ -1,0 +1,24 @@
+{
+  "name": "scss-natours",
+  "version": "1.0.0",
+  "description": "advance course css sass-natours",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass sass/main.scss css/style.css -w",
+    "live-server":"live-server ./ -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeDTruong96/Online-Course.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeDTruong96/Online-Course/issues"
+  },
+  "homepage": "https://github.com/LeDTruong96/Online-Course#readme",
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "sass": "^1.32.8"
+  }
+}
