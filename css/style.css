@@ -192,10 +192,67 @@ body {
   transform: translateY(0);
 }
 
+.composition {
+  width: 55%;
+  position: relative;
+}
+.composition__photo {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4);
+  transition: all 0.2s;
+  backface-visibility: hidden;
+}
+.composition__photo--p1 {
+  top: -2px;
+  left: 0px;
+}
+.composition__photo--p2 {
+  top: 4rem;
+  left: 25rem;
+}
+.composition__photo--p3 {
+  top: 13rem;
+  left: 10rem;
+}
+.composition__photo:hover {
+  transform: translateY(-2px) scale(1.1);
+  z-index: 20;
+  box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.6);
+  outline: 1.4rem solid #55c57a;
+  outline-offset: 2rem;
+}
+.composition:hover :not(:hover) {
+  transform: scale(0.9);
+}
+
+.card {
+  text-align: center;
+  padding: 2.5rem 2.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 3px;
+  transition: all 0.2s;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+.card__icon {
+  font-size: 6rem;
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.card__text {
+  font-size: 1.5rem;
+}
+.card:hover {
+  transform: translateY(-2rem) scale(1.05);
+  box-shadow: 0 0.5rem 4rem rgba(0, 0, 0, 0.2);
+}
+
 .row {
   max-width: 114rem;
   margin: 0 auto;
-  margin-bottom: 8rem;
 }
 .row::after {
   content: "";
@@ -253,6 +310,16 @@ body {
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -20vh;
+}
+
+.section-features {
+  padding: 20rem 0;
+  background: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
+  transform: skewY(-7deg);
+  margin-top: -11rem;
+}
+.section-features > * {
+  transform: skewY(7deg);
 }
 
 /*# sourceMappingURL=style.css.map */
