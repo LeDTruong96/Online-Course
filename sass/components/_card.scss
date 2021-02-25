@@ -1,8 +1,9 @@
 .card {
+    //for funtionality
     perspective: 150rem;
     -moz-perspective: 150rem;
     position: relative;
-    height: 50rem;
+    height: 52rem;
 
     &__side {
         position: absolute;
@@ -14,12 +15,15 @@
         backface-visibility: hidden;
         border-radius: 3px;
         box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+        overflow: hidden;
 
         &--font {
             background-color: $color-white;
+            position: relative;
         }
 
         &--back {
+            transform: rotateY(180deg);
             &--1 {
                 background-image: linear-gradient(
                     to right bottom,
@@ -27,7 +31,22 @@
                     $color-secondary-dark
                 );
             }
-            transform: rotateY(180deg);
+
+            &--2 {
+                background-image: linear-gradient(
+                    to right bottom,
+                    $color-primary-light,
+                    $color-primary-dark
+                );
+            }
+
+            &--3 {
+                background-image: linear-gradient(
+                    to right bottom,
+                    $color-tertiary-light,
+                    $color-tertiary-dark
+                );
+            }
         }
     }
 
@@ -37,5 +56,121 @@
 
     &:hover &__side--back {
         transform: rotateY(0deg);
+    }
+
+    // for styles
+
+    &__picture {
+        height: 45%;
+        background-size: cover;
+        background-blend-mode: screen;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        &--p1 {
+            background-image: linear-gradient(
+                    to right bottom,
+                    $color-secondary-light,
+                    $color-secondary-dark
+                ),
+                url(../img/nat-5.jpg);
+        }
+
+        &--p2 {
+            background-image: linear-gradient(
+                    to right bottom,
+                    $color-primary-light,
+                    $color-primary-dark
+                ),
+                url(../img/nat-6.jpg);
+        }
+        &--p3 {
+            background-image: linear-gradient(
+                    to right bottom,
+                    $color-tertiary-light,
+                    $color-tertiary-dark
+                ),
+                url(../img/nat-7.jpg);
+        }
+    }
+
+    &__heading {
+        position: absolute;
+        top: 12rem;
+        right: 2rem;
+        text-align: right;
+        font-size: 2.8rem;
+        font-weight: 300;
+        color: $color-white;
+        text-transform: uppercase;
+        width: 75%;
+    }
+
+    &__heading-span {
+        padding: 1rem 1rem;
+        box-decoration-break: clone;
+        &--1 {
+            background: linear-gradient(
+                to bottom,
+                rgba($color-secondary-light, 0.8),
+                rgba($color-secondary-dark, 0.8)
+            );
+        }
+
+        &--2 {
+            background: linear-gradient(
+                to bottom,
+                rgba($color-primary-light, 0.8),
+                rgba($color-primary-dark, 0.8)
+            );
+        }
+
+        &--3 {
+            background: linear-gradient(
+                to bottom,
+                rgba($color-tertiary-light, 0.8),
+                rgba($color-tertiary-dark, 0.8)
+            );
+        }
+    }
+
+    &__detail {
+        margin-top: 2rem;
+        text-align: center;
+
+        ul {
+            color: $color-grey-dark;
+            display: inline-block;
+            font-size: 1.5rem;
+            list-style: none;
+        }
+
+        li {
+            padding: 1rem 4rem;
+        }
+
+        & li:not(:last-child) {
+            border-bottom: 1px solid rgba($color-grey-dark, 0.1);
+        }
+    }
+
+    &__cta {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60%;
+        text-align: center;
+    }
+
+    &__only {
+        color: $color-white;
+        font-size: 1.3rem;
+        font-weight: 400;
+    }
+
+    &__price {
+        color: $color-white;
+        font-size: 6rem;
+        font-weight: 100;
+        margin-bottom: 8rem;
     }
 }
