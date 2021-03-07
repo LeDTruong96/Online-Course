@@ -1,10 +1,14 @@
 .feature-box {
     text-align: center;
-    padding: 2.5rem 2.5rem;
+    padding: 2.5rem;
     background-color: rgba($color-white, 0.8);
     border-radius: 3px;
     transition: all 0.2s;
     box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+    @include respond(tab-port) {
+        // padding: 2rem;
+    }
 
     &__icon {
         font-size: 6rem;

@@ -20,12 +20,6 @@ const commonConfig = {
 	},
 	module: {
 		rules: [
-			// {
-			// 	// use: [ babelLoader ],
-			// 	loader: 'babel-loader',
-			// 	test: /\.js$/,
-			// 	exclude: /node_modules/
-			// },
 			{
 				test: /\.s?css$/,
 				use: [ 'css-loader?url=false', postcssLoader, 'sass-loader' ]
@@ -86,6 +80,5 @@ module.exports = () => {
 
 	const mergeConfig = mergeWithRules(rulesMergeConfig)(commonConfig, subConfig);
 
-	// console.log(mergeConfig.module.rules);
 	return mergeConfig;
 };

@@ -1,5 +1,5 @@
 .story {
-    max-width: 50%;
+    width: 100%;
     margin: 0 auto;
     padding: 6rem 10rem 9rem 10rem;
     background-color: rgba($color-white, 0.85);
@@ -54,5 +54,15 @@
     &:hover &__pic {
         filter: blur(3px) brightness(0.7);
         transform: scale(1) translateX(-3rem);
+    }
+
+    @include respond(tab-port) {
+        width: 90%;
+        clip-path: none;
+        padding-left: 4rem;
+    }
+
+    @include respond(tab-land) {
+        width: 80%;
     }
 }

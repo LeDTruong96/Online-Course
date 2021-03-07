@@ -1,6 +1,7 @@
 .composition {
     width: 55%;
     position: relative;
+
     &__photo {
         position: absolute;
         width: 100%;
@@ -9,19 +10,38 @@
         transition: all 0.2s;
         backface-visibility: hidden;
 
+        @include respond(tab-port) {
+            width: 80%;
+        }
+
         &--p1 {
             top: -2px;
             left: 0px;
+
+            @include respond(tab-port) {
+                left: -2.5rem;
+            }
         }
 
         &--p2 {
             top: 4rem;
             left: 25rem;
+
+            @include respond(tab-port) {
+                top: -3rem;
+                left: 13rem;
+                z-index: 20;
+            }
         }
 
         &--p3 {
             top: 13rem;
             left: 10rem;
+
+            @include respond(tab-port) {
+                top: 0rem;
+                left: 28rem;
+            }
         }
 
         &:hover {
