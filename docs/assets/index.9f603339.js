@@ -34,42 +34,42 @@ var a = [
         city: "Toronto",
         averagePrice: 120,
         propertyCount: 76,
-        imageUrl: "/img/toronto.jpg",
+        imageUrl: "./img/toronto.jpg",
         imageAlt: "Toronto skyline",
     },
     {
         city: "Malibu",
         averagePrice: 215,
         propertyCount: 43,
-        imageUrl: "/img/malibu.jpg",
+        imageUrl: "./img/malibu.jpg",
         imageAlt: "Cliff in Malibu",
     },
     {
         city: "Chicago",
         averagePrice: 130,
         propertyCount: 115,
-        imageUrl: "/img/chicago.jpg",
+        imageUrl: "./img/chicago.jpg",
         imageAlt: "Chicago skyline",
     },
     {
         city: "Seattle",
         averagePrice: 135,
         propertyCount: 63,
-        imageUrl: "/img/seattle.jpg",
+        imageUrl: "./img/seattle.jpg",
         imageAlt: "Seattle skyline",
     },
     {
         city: "Colorado",
         averagePrice: 85,
         propertyCount: 47,
-        imageUrl: "/img/colorado.jpg",
+        imageUrl: "./img/colorado.jpg",
         imageAlt: "Lake in Colorado",
     },
     {
         city: "Miami",
         averagePrice: 115,
         propertyCount: 86,
-        imageUrl: "/img/miami.jpg",
+        imageUrl: "./img/miami.jpg",
         imageAlt: "Beach in Miami",
     },
 ];
@@ -128,13 +128,13 @@ function l() {
                     { className: "xl:max-w-xl" },
                     e.createElement("img", {
                         className: "h-10",
-                        src: "/img/logo-brand.svg",
+                        src: "./img/logo-brand.svg",
                         alt: "Workcation",
                     }),
                     e.createElement("img", {
                         className:
                             "mt-6 rounded-lg shadow-xl sm:mt-8 sm:h-64 sm:w-full sm:object-cover object-center lg:hidden",
-                        src: "/img/beach-work.jpg",
+                        src: "./img/beach-work.jpg",
                         alt: "Woman workcationing on the beach",
                     }),
                     e.createElement(
@@ -177,7 +177,7 @@ function l() {
                 { className: "hidden relative lg:block 2xl:col-span-3" },
                 e.createElement("img", {
                     className: "absolute inset-0 w-full h-full object-cover object-center",
-                    src: "/img/beach-work.jpg",
+                    src: "./img/beach-work.jpg",
                     alt: "Woman workcationing on the beach",
                 })
             )
