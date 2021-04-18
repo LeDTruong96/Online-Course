@@ -1,0 +1,32 @@
+{
+  "name": "tailwindcss-course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "dev": "TAILWIND_MODE=watch NODE_ENV=development postcss ./tailwind/tailwind.custom.css -c ./tailwind/tailwind.config.c -o ./tailwind/tailwind.css -w",
+    "build:dev": "TAILWIND_MODE=build NODE_ENV=development postcss ./tailwind/tailwind.custom.css -c ./tailwind/tailwind.config.c -o ./tailwind/tailwind.css",
+    "build:prod": "TAILWIND_MODE=build NODE_ENV=production postcss ./tailwind/tailwind.custom.css -c ./tailwind/tailwind.config.c -o ./tailwind/tailwind.css",
+    "live": "live-server ./"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeDTruong96/Online-Course.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeDTruong96/Online-Course/issues"
+  },
+  "homepage": "https://github.com/LeDTruong96/Online-Course#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "live-server": "^1.2.1",
+    "postcss": "^8.2.10",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.1.1",
+    "vite": "^2.1.5"
+  }
+}
