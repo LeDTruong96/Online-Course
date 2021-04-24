@@ -4,11 +4,8 @@
   "description": "",
   "main": "tailwind.config.js",
   "scripts": {
-    "dev": "TAILWIND_MODE=watch NODE_ENV=development postcss ./tailwind/tailwind.custom.css -c ./tailwind/tailwind.config.c -o ./tailwind/tailwind.css -w",
-    "build:dev": "TAILWIND_MODE=build NODE_ENV=development postcss ./tailwind/tailwind.custom.css -c ./tailwind/tailwind.config.c -o ./tailwind/tailwind.css",
-    "build:prod": "TAILWIND_MODE=build NODE_ENV=production postcss ./tailwind/tailwind.custom.css -c ./tailwind/tailwind.config.c -o ./tailwind/tailwind.css",
-    "live": "live-server ./"
-
+    "dev": "NODE_ENV=development postcss ./styles/styles.custom.css -o ./styles/styles.css -w",
+    "build": "NODE_ENV=production postcss ./styles/styles.custom.css -o ./styles/styles.css"
   },
   "repository": {
     "type": "git",
@@ -24,9 +21,8 @@
   "devDependencies": {
     "autoprefixer": "^10.2.5",
     "live-server": "^1.2.1",
-    "postcss": "^8.2.10",
+    "postcss": "^8.2.12",
     "postcss-cli": "^8.3.1",
-    "tailwindcss": "^2.1.1",
-    "vite": "^2.1.5"
+    "tailwindcss": "^2.1.2"
   }
 }
